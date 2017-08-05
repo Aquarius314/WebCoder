@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title> JS code editor </title>
+
+  <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="codemirror/lib/codemirror.js"></script>
+  <script src="codemirror/mode/javascript/javascript.js"></script>
+
+</head>
+<body>
+<div class="head-text"> JS code editor </div>
+
+<div class="editorArea">
+  <center><strong>Editor</strong></center>
+  <textarea id="myArea" class="fullArea">console.log("Hello editor!");</textarea>
+</div>
+
+<div class="consoleArea">
+  <center><strong>Output</strong></center>
+  <textarea id="myOutput" class="fullArea" readonly rows="20">Output goes here</textarea>
+  <center><strong>Errors</strong></center>
+  <textarea id="errors" class="fullAreaRed" readonly rows="5">Errors go here</textarea>
+</div>
+
+<script src="mirror.js"></script>
+<script src="languageOptions.js"></script>
+<script src="execute.js"></script>
+<script src="clearOutput.js"></script>
+
+</body>
+</html>
