@@ -1,0 +1,18 @@
+var defX = 100, defY = 100, defR = 10;
+var defSpeedX = 0;
+var defSpeedY = 0;
+var defaultFPSDividor = 15;
+
+function changeDefaults(defaultX, defaultY, defaultR, defaultSX, defaultSY) {
+  defX = defaultX;
+  defY = defaultY;
+  defR = defaultR;
+  defSpeedX = defaultSX;
+  defSpeedY = defaultSY;
+}
+
+function init() {
+  ball.moveTo(defX, defY);
+  ball.resize(defR);
+  ball.setSpeed(defSpeedX, defSpeedY);
+}

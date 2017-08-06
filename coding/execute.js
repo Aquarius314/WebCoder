@@ -1,17 +1,30 @@
 var executeButtons = [];
 
+var outputLogs = [];
+var maxLogsNumber = 15;
+
 var firstExecution = true;
 var errorMessage = "";
+var outputArea = document.getElementById("myOutput");
+outputArea.scrollTop = outputArea.scrollHeight;
+
+window.console.log = catchOutput;
 
 
-function clearOutput() {
-  document.getElementById("myOutput").value = "";
+function getLogs() {
+  clearOutput();
+  while(outputLogs.length > maxLogsNumber) {
+    outputLogs.shift();
+  }
+  for(var i = 0; i < outputLogs.length; i++) {
+    outputArea.value += outputLogs[i]+"\n";
+  }
 }
 
 function catchOutput(msg) {
-  var outputArea = document.getElementById("myOutput");
+  outputLogs.push(msg);
   outputArea.value += msg+"\n";
-  outputArea.scrollTop = outputArea.scrollHeight;
+  getLogs();
 }
 
 function catchError(msg, url, lineNumber) {
@@ -25,7 +38,6 @@ function executeJS() {
   var info = d.getTime() + ": execute script with output:";
 
   window.onerror = catchError;
-  window.console.log = catchOutput;
 
   if(firstExecution) {
     firstExecution = false;
@@ -55,13 +67,10 @@ function executeJS() {
 }
 
 function createExecutorJS() {
-  var btnExecuteJS = document.createElement('button');
-  btnExecuteJS.textContent = "Run JS";
+  var btnExecuteJS = document.getElementById('runButton');
   btnExecuteJS.onclick = function() {
     executeJS();
   }
-  executeButtons.push(btnExecuteJS);
-  document.body.appendChild(btnExecuteJS);
 }
 
 createExecutorJS();

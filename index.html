@@ -5,30 +5,63 @@
   <title> JS code editor </title>
 
   <link rel="stylesheet" href="codemirror/lib/codemirror.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style.css">
   <script src="codemirror/lib/codemirror.js"></script>
   <script src="codemirror/mode/javascript/javascript.js"></script>
 
 </head>
 <body>
-<div class="head-text" id="header"> JS code editor </div>
+
+<!-- <script>
+  var c = document.getElementById('myCanvas');
+  c.onclick = function(e) {
+    c.width -= 45;
+    c.height -= 30;
+  }
+</script> -->
 
 <div class="editorArea">
   <center><strong>Editor</strong></center>
-  <textarea id="myArea" class="fullArea">console.log("Hello editor!");</textarea>
+  <textarea id="myArea" class="fullArea">
+myLoop = function(){
+  // override this method
+  console.log("Example output");
+}
+</textarea>
 </div>
 
 <div class="consoleArea">
+
   <center><strong>Output</strong></center>
-  <textarea id="myOutput" class="fullArea" readonly rows="20">Output goes here</textarea>
+  <textarea id="myOutput" class="fullArea" readonly rows="14"></textarea>
   <center><strong>Errors</strong></center>
-  <textarea id="errors" class="fullAreaRed" readonly rows="5">Errors go here</textarea>
+  <textarea id="errors" class="fullAreaRed" readonly rows="4">Errors go here</textarea>
 </div>
 
-<script src="mirror.js"></script>
-<script src="languageOptions.js"></script>
-<script src="execute.js"></script>
-<script src="clearOutput.js"></script>
+<div class="codeArea" id="btnArea">
+  <button id="runButton">Run JS</button>
+  <button id="clearButton">Clear console</button>
+  <button id="gameButton">Run Game</button>
+  <button id="resetButton">Reset</button>
+</div>
+
+<div class="gameCanvas" id="header">
+  <canvas id="myCanvas" width=900 height=300></canvas>
+</div>
+
+<script src="coding/mirror.js"></script>
+<script src="coding/languageOptions.js"></script>
+<script src="coding/execute.js"></script>
+<script src="coding/clearOutput.js"></script>
+
+<script src="game/defaults.js"></script>
+<script src="game/elements/ball.js"></script>
+<script src="game/elements/ground.js"></script>
+<script src="game/elements/line.js"></script>
+<script src="game/world.js"></script>
+<script src="game/main.js"></script>
+<script src="game/calculate.js"></script>
+<script src="game/render.js"></script>
 
 <script src="tests.js"></script>
 

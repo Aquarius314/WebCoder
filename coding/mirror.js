@@ -6,4 +6,4 @@ var myCodeMirror = CodeMirror.fromTextArea(myTextArea, {
   matchBrackets: true,
 });
 
-myCodeMirror.setSize(null, 416);
+myCodeMirror.setSize(null, 256);

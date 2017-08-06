@@ -1,0 +1,63 @@
+body {
+  background-color: lightblue;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+img {
+  padding: 5px;
+}
+
+.codeArea {
+  padding: 10px;
+  width: 97.5%;
+  border: 2px solid darkblue;
+}
+
+button {
+  margin-right: 10px;
+  /*for 3 buttons*/
+  /*width: 16.5%; */
+  width: 12.1%;
+  height: 36px;
+  font-size: 16px;
+  background-color: lightblue;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+.editorArea {
+  padding: 10px;
+  width: 50%;
+  float: left;
+}
+
+.fullArea {
+  width:95.5%;
+}
+
+.fullAreaRed {
+  width:95.5%;
+  color: red;
+}
+
+.consoleArea {
+  padding: 10px;
+  width: 46%;
+  float: right;
+}
+
+canvas {
+  background: #eee;
+  display: block;
+  margin: 0 auto;
+  /*border: 2px solid lightblue;*/
+}
+
+.gameCanvas {
+  margin: 10px 10px 10px 10px;
+  font-size: 26px;
+  color: black;
+  text-align: center;
+  background-color: black;
+}
