@@ -10,12 +10,20 @@ function clear() {
   ctx.closePath();
 }
 
-function drawBall() {
+function drawBall(b) {
   ctx.beginPath();
-  ctx.fillStyle = "#FF0000";
-  ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI*2, false);
+  ctx.fillStyle = b.color;
+  ctx.arc(b.x, b.y, b.radius, 0, Math.PI*2, false);
   ctx.fill();
   ctx.closePath();
+
+  for(var i = 0; i < b.lastPositions.length; i++) {
+    ctx.beginPath();
+    ctx.arc(b.lastPositions[i].x, b.lastPositions[i].y, b.lastPositions[i].radius, 0, Math.PI*2, false);
+    ctx.fill();
+    ctx.closePath();
+  }
+
 }
 
 function drawGround() {
@@ -32,20 +40,26 @@ function drawGround() {
   ctx.closePath();
 }
 
-function drawLine(line) {
+function drawLine(l) {
   ctx.beginPath();
-  ctx.strokeStyle = "#000000";
+  ctx.strokeStyle = l.color;
   ctx.lineWidth = 2;
-  ctx.moveTo(line.x1, line.y1);
-  ctx.lineTo(line.x2, line.y2)
+  ctx.moveTo(l.x1, l.y1);
+  ctx.lineTo(l.x2, l.y2)
   ctx.stroke();
   ctx.closePath();
+}
+
+function drawLines() {
+  for(var i = 0; i < lines.length; i++) {
+    drawLine(lines[i]);
+  }
 }
 
 function render() {
   // console.log("Render");
   clear();
   // drawGround();
-  drawLine(line);
-  drawBall();
+  drawLines();
+  drawBall(ball);
 }

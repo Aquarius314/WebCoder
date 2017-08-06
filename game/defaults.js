@@ -1,7 +1,10 @@
-var defX = 100, defY = 100, defR = 10;
+var defR = 10;
+var defX = 100, defY = defR+1;
 var defSpeedX = 0;
 var defSpeedY = 0;
-var defaultFPSDividor = 15;
+
+var defaultFPSDividor = 10;
+var defMaxSpeedY = defR*2-1;
 
 function changeDefaults(defaultX, defaultY, defaultR, defaultSX, defaultSY) {
   defX = defaultX;

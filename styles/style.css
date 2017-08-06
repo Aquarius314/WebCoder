@@ -11,7 +11,8 @@ img {
 .codeArea {
   padding: 10px;
   width: 97.5%;
-  border: 2px solid darkblue;
+  /*border: 2px solid darkblue;*/
+  border-radius: 30px;
 }
 
 button {
@@ -24,6 +25,8 @@ button {
   background-color: lightblue;
   margin-bottom: 0;
   font-weight: bold;
+  /*border: 2px solid black;*/
+  border-radius: 20px;
 }
 
 .editorArea {
@@ -60,4 +63,5 @@ canvas {
   color: black;
   text-align: center;
   background-color: black;
+  border-radius: 40px;
 }
