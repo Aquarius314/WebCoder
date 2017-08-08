@@ -39,7 +39,8 @@ class Ball{
   checkCollisions() {
     // temporary: only 1 line to check
     for(var i = 0; i < lines.length; i++) {
-      if(this.x > lines[i].x1-this.radius && this.x < lines[i].x2+this.radius) {
+      if((this.x > lines[i].x1-this.radius && this.x < lines[i].x2+this.radius) ||
+      (this.x > lines[i].x2-this.radius && this.x < lines[i].x1+this.radius)) {
         if(this.distanceToLine(lines[i]) <= this.radius) {
           this.bounceLine(lines[i]);
         }
@@ -62,8 +63,8 @@ class Ball{
     var dY = this.speedY;
     var angA = Math.atan2(dX, dY);//*180/Math.PI;
 
-    dX = l.x2-l.x1;
-    dY = l.y2-l.y1;
+    dX = Math.abs(l.x2-l.x1);
+    dY = Math.abs(l.y2-l.y1);
     var angB = Math.atan2(dX, dY);//*180/Math.PI;
 
     var ang = (angA-angB)*2;
